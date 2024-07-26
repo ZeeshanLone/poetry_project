@@ -1,7 +1,10 @@
-name: Lint and Type Check
+name: Lint, Type Check, and Test
 
 on:
   push:
+    branches:
+      - develop
+  pull_request:
     branches:
       - develop
 
@@ -11,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: "3.12"
 
